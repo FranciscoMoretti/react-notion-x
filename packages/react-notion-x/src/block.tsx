@@ -105,6 +105,8 @@ export const Block: React.FC<BlockProps> = (props) => {
     case 'collection_view_page':
     // fallthrough
     case 'page':
+      sanitizePageCoverPosition(block)
+
       if (level === 0) {
         const {
           page_icon = defaultPageIcon,
@@ -831,4 +833,11 @@ export const Block: React.FC<BlockProps> = (props) => {
   }
 
   return null
+}
+
+function sanitizePageCoverPosition(block: types.PageBlock | types.CollectionViewPageBlock) {
+  // The format can contain a page_cover_position of an inexistent page_cover if the cover was removed.
+  if (block.format?.page_cover == undefined && block.format?.page_cover_position != undefined) {
+    block.format.page_cover_position = undefined
+  }
 }
