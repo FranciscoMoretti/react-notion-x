@@ -1,6 +1,7 @@
 import * as React from 'react'
 
 import CheckIcon from '../icons/check'
+import '../styles.css'
 
 export const Checkbox: React.FC<{
   isChecked: boolean
