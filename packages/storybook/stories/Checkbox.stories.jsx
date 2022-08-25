@@ -20,7 +20,3 @@ Primary.args = {
   isChecked: true,
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-  isChecked: false,
-};
