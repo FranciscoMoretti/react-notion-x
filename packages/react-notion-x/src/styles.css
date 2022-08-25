@@ -1419,8 +1419,8 @@ svg.notion-page-icon {
 }
 
 .notion-property-checkbox-unchecked {
-  width: 16px;
-  height: 16px;
+  width: calc(16px - 1.3px*2);
+  height: calc(16px - 1.3px*2);
   border: 1.3px solid var(--fg-color);
 }
 
