@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { SvgCheckIcon, SvgCheckBoxIcon } from '../icons/check'
+import { CheckIcon, CheckBoxIcon } from '../icons/check'
 import '../styles.css'
 
 export const Checkbox: React.FC<{
@@ -12,13 +12,13 @@ export const Checkbox: React.FC<{
   if (isChecked) {
     content = (
       <div className='notion-property-checkbox notion-property-checkbox-checked'>
-        <SvgCheckIcon />
+        <CheckIcon />
       </div>
     )
   } else {
     content = (
       <div className='notion-property-checkbox'>
-        <SvgCheckBoxIcon />
+        <CheckBoxIcon />
       </div>
     )
   }
