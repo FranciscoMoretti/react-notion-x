@@ -9,7 +9,37 @@ export const wrapNextImage = (NextImage: any): React.FC<any> => {
 
     width,
     height,
+    className,
 
+    fill,
+
+    ...rest
+  }) {
+    if (fill === 'undefined') {
+      fill = !(width && height)
+    }
+
+    return (
+      <NextImage
+        className={className}
+        src={src}
+        alt={alt}
+        width={!fill && width && height ? width : undefined}
+        height={!fill && width && height ? height : undefined}
+        fill={fill}
+        {...rest}
+      />
+    )
+  }, isEqual)
+}
+
+export const wrapNextLegacyImage = (NextLegacyImage: any): React.FC<any> => {
+  return React.memo(function ReactNotionXNextLegacyImage({
+    src,
+    alt,
+
+    width,
+    height,
     className,
     style,
 
@@ -22,7 +52,7 @@ export const wrapNextImage = (NextImage: any): React.FC<any> => {
     }
 
     return (
-      <NextImage
+      <NextLegacyImage
         className={className}
         src={src}
         alt={alt}
@@ -59,8 +89,7 @@ export const wrapNextLink = (NextLink: any): React.FC<any> =>
         scroll={scroll}
         shallow={shallow}
         locale={locale}
-      >
-        <a {...linkProps} />
-      </NextLink>
+        {...linkProps}
+      ></NextLink>
     )
   }
