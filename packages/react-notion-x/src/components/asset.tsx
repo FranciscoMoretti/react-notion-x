@@ -1,11 +1,12 @@
 import * as React from 'react'
+
 import { BaseContentBlock, Block } from 'notion-types'
 import { getTextContent } from 'notion-utils'
 
 import { useNotionContext } from '../context'
+import { getYoutubeId } from '../utils'
 import { LazyImage } from './lazy-image'
 import { LiteYouTubeEmbed } from './lite-youtube-embed'
-import { getYoutubeId } from '../utils'
 
 const isServer = typeof window === 'undefined'
 
@@ -87,6 +88,21 @@ export const Asset: React.FC<{
         }
       }
     } else {
+      switch (block.format?.block_alignment) {
+        case 'center': {
+          style.alignSelf = 'center'
+          break
+        }
+        case 'left': {
+          style.alignSelf = 'start'
+          break
+        }
+        case 'right': {
+          style.alignSelf = 'end'
+          break
+        }
+      }
+
       if (block_width) {
         style.width = block_width
       }
