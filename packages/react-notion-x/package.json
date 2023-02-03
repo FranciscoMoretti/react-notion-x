@@ -20,7 +20,9 @@
   "scripts": {
     "build": "tsup",
     "dev": "npm run build -- --watch",
-    "watch": "tsup --watch --silent --onSuccess 'echo build successful'"
+    "watch": "tsup --watch --silent --onSuccess 'echo build successful'",
+    "types": "tsc --emitDeclarationOnly",
+    "prettier-fix": "prettier --write ."
   },
   "dependencies": {
     "@fisch0920/medium-zoom": "^1.0.7",

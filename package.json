@@ -18,15 +18,13 @@
     "start": "turbo run start",
     "types": "turbo run types",
     "prettier-fix": "prettier --write .",
-    "prebuild": "run-s clean",
-    "prewatch": "run-s clean",
     "clean": "del packages/*/build",
     "pretest": "run-s build",
     "test": "run-p test:*",
-    "test:unit": "lerna run test",
+    "test:unit": "turbo run test",
     "test:eslint": "eslint '**/*.{ts,tsx}'",
-    "predeploy": "run-s build",
     "test:prettier": "prettier '**/*.{js,jsx,ts,tsx}' --check",
+    "predeploy": "run-s build",
     "pre-commit": "lint-staged"
 
   },

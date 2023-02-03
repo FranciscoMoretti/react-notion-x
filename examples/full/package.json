@@ -10,8 +10,12 @@
     "analyze": "cross-env ANALYZE=true next build",
     "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
     "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build",
+    "lint": "next lint",
+    "prettier-fix": "prettier --write .",
+    "find:unused": "npx next-unused",
     "deploy": "vercel deploy"
   },
+  "sideEffects": false,
   "dependencies": {
     "@notionhq/client": "^1.0.4",
     "classnames": "^2.3.1",
