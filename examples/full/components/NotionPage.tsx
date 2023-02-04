@@ -7,7 +7,7 @@ import { useRouter } from 'next/router'
 
 import { ExtendedRecordMap } from 'notion-types'
 import { getPageTitle } from 'notion-utils'
-import { NotionRenderer } from 'react-notion-x'
+import NotionRenderer from './NotionRendererClient'
 import TweetEmbed from 'react-tweet-embed'
 
 import { Loading } from './Loading'

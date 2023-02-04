@@ -5,6 +5,9 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 module.exports = withBundleAnalyzer({
   staticPageGenerationTimeout: 300,
+  experimental: {
+    appDir: true,
+  },
   images: {
     domains: [
       'www.notion.so',
