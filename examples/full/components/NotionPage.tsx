@@ -2,7 +2,6 @@
 
 import * as React from 'react'
 import dynamic from 'next/dynamic'
-import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 // import { useRouter } from 'next/router'
@@ -115,38 +114,8 @@ export const NotionPage = ({
     g.block = block
   }
 
-  const socialDescription = 'React Notion X Demo'
-  const socialImage =
-    'https://react-notion-x-demo.transitivebullsh.it/social.jpg'
-
   return (
     <>
-      <Head>
-        {socialDescription && (
-          <>
-            <meta name='description' content={socialDescription} />
-            <meta property='og:description' content={socialDescription} />
-            <meta name='twitter:description' content={socialDescription} />
-          </>
-        )}
-
-        {socialImage ? (
-          <>
-            <meta name='twitter:card' content='summary_large_image' />
-            <meta name='twitter:image' content={socialImage} />
-            <meta property='og:image' content={socialImage} />
-          </>
-        ) : (
-          <meta name='twitter:card' content='summary' />
-        )}
-
-        <title>{title}</title>
-        <meta property='og:title' content={title} />
-        <meta name='twitter:title' content={title} />
-        <meta name='twitter:creator' content='@transitive_bs' />
-        <link rel='icon' href='/favicon.ico' />
-      </Head>
-
       <NotionRenderer
         recordMap={recordMap}
         fullPage={true}
