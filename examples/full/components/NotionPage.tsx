@@ -1,16 +1,18 @@
+'use client'
+
 import * as React from 'react'
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
+// import { useRouter } from 'next/router'
 
 import { ExtendedRecordMap } from 'notion-types'
 import { getPageTitle } from 'notion-utils'
 import NotionRenderer from './NotionRendererClient'
 import TweetEmbed from 'react-tweet-embed'
 
-import { Loading } from './Loading'
+// import { Loading } from './Loading'
 
 // -----------------------------------------------------------------------------
 // dynamic imports for optional components
@@ -91,11 +93,11 @@ export const NotionPage = ({
   rootPageId?: string
   rootDomain?: string
 }) => {
-  const router = useRouter()
+  // const router = useRouter()
 
-  if (router.isFallback) {
-    return <Loading />
-  }
+  // if (router.isFallback) {
+  //   return <Loading />
+  // }
 
   if (!recordMap) {
     return null

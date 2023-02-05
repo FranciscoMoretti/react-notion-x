@@ -1,6 +1,5 @@
 import { getPageTitle } from 'notion-utils'
 import { NotionAPI } from 'notion-client'
-import { rootNotionPageId } from '../lib/config'
 import { ExtendedRecordMap } from 'notion-types'
 
 const notion = new NotionAPI()
@@ -18,8 +17,8 @@ async function getTitle(recordMap: ExtendedRecordMap) {
   //     revalidate: 10
 }
 
-export default async function Head() {
-  const recordMap = await notion.getPage(rootNotionPageId)
+export default async function Head({ params }: { params: { pageId: string } }) {
+  const recordMap = await notion.getPage(params.pageId)
   const title = await getTitle(recordMap)
 
   // useful for debugging from the dev console
