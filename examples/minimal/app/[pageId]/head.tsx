@@ -1,6 +1,5 @@
 import { getPageTitle } from 'notion-utils'
 import { NotionAPI } from 'notion-client'
-import { rootNotionPageId } from '../../lib/config'
 
 const notion = new NotionAPI()
 
@@ -18,8 +17,8 @@ async function getTitle(id: string) {
   //     revalidate: 10
 }
 
-export default async function Head() {
-  const title = await getTitle(rootNotionPageId)
+export default async function Head({ params }: { params: { pageId: string } }) {
+  const title = await getTitle(params.pageId)
   return (
     <>
       <meta name='description' content='React Notion X Minimal Demo' />
