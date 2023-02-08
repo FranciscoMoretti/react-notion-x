@@ -7,7 +7,6 @@
   "author": "Travis Fischer <travis@transitivebullsh.it>",
   "license": "MIT",
   "types": "./build/index.d.ts",
-  "sideEffects": false,
   "files": [
     "build"
   ],

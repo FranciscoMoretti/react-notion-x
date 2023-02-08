@@ -15,7 +15,6 @@
       "default": "./build/index.js"
     }
   },
-  "sideEffects": false,
   "files": [
     "build"
   ],

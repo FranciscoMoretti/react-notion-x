@@ -15,7 +15,6 @@
     "find:unused": "npx next-unused",
     "deploy": "vercel deploy"
   },
-  "sideEffects": false,
   "dependencies": {
     "@notionhq/client": "^1.0.4",
     "classnames": "^2.3.1",
