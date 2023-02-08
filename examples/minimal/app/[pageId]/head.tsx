@@ -12,7 +12,6 @@ async function getTitle(id: string) {
   }
 
   const title = getPageTitle(recordMap)
-  console.log('Title:', title)
   return title
   //     revalidate: 10
 }

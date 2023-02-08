@@ -8,7 +8,6 @@ const notion = new NotionAPI()
 
 async function getNotionPage(id: string) {
   const recordMap = await notion.getPage(id)
-  console.log('revalidating...')
   return recordMap
   //     revalidate: 10
 }
