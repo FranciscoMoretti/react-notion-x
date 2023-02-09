@@ -21,6 +21,7 @@
     "got": "^12.0.2",
     "lqip-modern": "^1.2.0",
     "next": "^13.1.6",
+    "notion-types": "workspace:*",
     "notion-client": "workspace:*",
     "notion-compat": "^6.15.6",
     "notion-utils": "workspace:*",

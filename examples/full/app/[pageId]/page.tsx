@@ -56,6 +56,7 @@ export async function generateStaticParams() {
   const paths = Object.keys(pages)
     .map((pageId) => mapPageUrl(pageId))
     .filter((path) => path && path !== '/')
+    .map((path) => (path.startsWith('/') ? path.substring(1) : path))
 
   return paths.map((path) => ({
     pageId: path
