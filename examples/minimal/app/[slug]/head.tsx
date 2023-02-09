@@ -16,8 +16,9 @@ async function getTitle(id: string) {
   //     revalidate: 10
 }
 
-export default async function Head({ params }: { params: { pageId: string } }) {
-  const title = await getTitle(params.pageId)
+export default async function Head({ params }: { params: { slug: string } }) {
+  const pageId = params.slug
+  const title = await getTitle(pageId)
   return (
     <>
       <meta name='description' content='React Notion X Minimal Demo' />

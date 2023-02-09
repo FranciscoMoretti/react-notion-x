@@ -1,26 +1,22 @@
 import { NotionAPI } from 'notion-client'
 import NotionRenderer from '../../components/NotionRendererClient'
 import { rootNotionPageId } from '../../lib/config'
-
-const notion = new NotionAPI()
+export const dynamic = 'force-dynamic'
 
 export const revalidate = false // Do not revalidate
 
-// export async function generateStaticParams() {
-//     const { products } = await getAllProductPaths()
-//     return products.map((product) => {
-//       return { slug: getSlug(product.path) }
-//     })
-//   }
+const notionAPIInstance = new NotionAPI()
 
 async function getNotionPage(id: string) {
-  const recordMap = await notion.getPage(id)
+  const recordMap = await notionAPIInstance.getPage(id)
   return recordMap
   //     revalidate: 10
 }
 
-export default async function Page({ params }: { params: { pageId: string } }) {
-  const recordMap = await getNotionPage(params.pageId)
+export default async function Page({ params }: { params: { slug: string } }) {
+  const pageId = params.slug
+
+  const recordMap = await getNotionPage(pageId)
   return (
     <NotionRenderer
       recordMap={recordMap}
